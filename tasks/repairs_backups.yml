@@ -16,8 +16,8 @@
     src: cassandra_repair.j2
     dest: /usr/local/bin/cassandra_repair_{{ cassandra_cluster_name }}
     mode: 0755
-    owner: cassandra
-    group: cassandra
+    owner: '{{ cassandra_user }}'
+    group: '{{ cassandra_group }}'
   tags:
     - repair
 
@@ -26,8 +26,8 @@
     src: cassandra_backup.j2
     dest: /usr/local/bin/cassandra_backup_{{ cassandra_cluster_name }}
     mode: 0755
-    owner: cassandra
-    group: cassandra
+    owner: '{{ cassandra_user }}'
+    group: '{{ cassandra_group }}'
   when: cassandra_backup_enabled
   tags:
     - backup
@@ -37,8 +37,8 @@
     src: cassandra_restore.j2
     dest: /usr/local/bin/cassandra_restore
     mode: 0755
-    owner: cassandra
-    group: cassandra
+    owner: '{{ cassandra_user }}'
+    group: '{{ cassandra_group }}'
   when: cassandra_backup_enabled
   tags:
     - backup
@@ -48,8 +48,8 @@
     src: cassandra_incremental_backup.j2
     dest: /usr/local/bin/cassandra_incremental_backup_{{ cassandra_cluster_name }}
     mode: 0755
-    owner: cassandra
-    group: cassandra
+    owner: '{{ cassandra_user }}'
+    group: '{{ cassandra_group }}'
   when: cassandra_backup_enabled
   tags:
     - backup
