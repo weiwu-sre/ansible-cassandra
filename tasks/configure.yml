@@ -31,6 +31,7 @@
     value: 1048575
     sysctl_set: true
     reload: true
+  ignore_errors: true
 
 # This is set when installing cassandra via debian package,
 # see https://git1-us-west.apache.org/repos/asf?p=cassandra.git;a=blob;f=debian/cassandra-sysctl.conf;h=443e83f81c352ffb21f2b2302f09f0c9fefca23e;hb=0766f7e54182d04ecf5a15a732f5ec7951d62326
@@ -40,6 +41,7 @@
     value: 300
     sysctl_set: true
     reload: true
+  ignore_errors: true
   # skip this task in docker on travis/for testing as it errors with
   #     sysctl: cannot stat /proc/sys/net/ipv4/tcp_keepalive_time: No such file or directory
   # more info: https://github.com/moby/moby/issues/4717
