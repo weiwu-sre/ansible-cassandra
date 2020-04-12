@@ -18,7 +18,7 @@ max_hints_file_size_in_mb: 128
 # reduced proportionally to the number of nodes in the cluster.
 batchlog_replay_throttle_in_kb: 1024
 
-authenticator: AllowAllAuthenticator
+authenticator: {{ cassandra_authenticator }}
 authorizer: AllowAllAuthorizer
 role_manager: CassandraRoleManager
 roles_validity_in_ms: 2000

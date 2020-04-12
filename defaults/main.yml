@@ -25,7 +25,8 @@ cassandra_shortcut_path: /usr/local/bin
 cassandra_key_cache_size_in_mb: 100
 cassandra_concurrent_reads: 128
 cassandra_concurrent_writes: 128
-
+cassandra_data_path: /mnt/cassandra
+cassandra_authenticator: AllowAllAuthenticator
 
 # custom flags
 cassandra_install_custom_logback: true
@@ -51,7 +52,6 @@ cassandra_metrics_prefix: 'cassandra_{{ cassandra_cluster_name }}'
 cassandra_snitch: '{% if is_aws_environment %}Ec2Snitch{% else %}SimpleSnitch{% endif %}'
 
 cassandra_network_interface: "{% if ansible_default_ipv4 is defined %}{{ ansible_default_ipv4.interface }}{% else %}eth0{% endif %}"
-cassandra_data_path: /mnt/cassandra
 # seed resolution can be:
 # A. static (then provide 'cassandra_seeds')
 # or
