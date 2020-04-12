@@ -126,7 +126,7 @@
 
 - name: create data directories under /mnt
   file:
-    path: {{ cassandra_data_path }}/{{ item }}/
+    path: '{{ cassandra_data_path }}/{{ item }}/'
     mode: 0775
     owner: '{{ cassandra_user }}'
     group: '{{ cassandra_group }}'
